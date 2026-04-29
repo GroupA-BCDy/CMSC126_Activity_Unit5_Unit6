@@ -11,4 +11,6 @@ A summary of the system.
 
 ## Hosting
 
+Platform for hosting.
+
 ## Mockups
