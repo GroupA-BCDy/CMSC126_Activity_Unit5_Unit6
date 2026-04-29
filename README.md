@@ -1,1 +1,14 @@
-# -CMSC126_Activity_Unit5_Unit6-
+# CRS 2.0
+
+A summary of the system.
+
+## Tech Stack
+
+- Frontend Tools
+- Backend Tools
+- Database
+- Other Tools
+
+## Hosting
+
+## Mockups
