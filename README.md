@@ -4,10 +4,10 @@ A summary of the system.
 
 ## Tech Stack
 
-- Frontend
-- Backend Tools
-- Database
-- Other Tools
+- [Frontend](#frontend)
+- [Backend](#backend)
+- [Database](#database)
+- [Other Tools](#othertools)
 
 ## Hosting
 
