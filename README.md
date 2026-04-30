@@ -82,26 +82,6 @@ When a student opens their browser and goes to crs.upv.edu.ph, the request trave
 
 To keep the system fast during peak enrollment, Redis is used as a caching layer. Data that doesn't change often, like the list of subject offerings or the academic calendar, is stored in Redis so that Django doesn't have to query the database every single time a student loads that information. This alone significantly reduces the load on the system during the high-traffic enrollment window.
 
-### Step 1 — The student opens the browser. 
-
-The student types crs.upv.edu.ph into their browser. The request travels through UPV's network to the university's server room.
-
-### Step 2 — Nginx receives the request. 
-
-Nginx is a web server that acts as the front door of the entire system. It is the first thing that receives every incoming request. Nginx is responsible for two things: serving the React frontend files (HTML, JavaScript, CSS) directly to the browser, and forwarding API requests (like "fetch available subjects") to Django. Nginx also handles HTTPS. It holds the SSL certificate issued under UPV's domain, so all traffic between the student's browser and the server is encrypted. No one can intercept or read the data in transit.
-
-### Step 3 — Django processes the request. 
-
-For requests that need server logic (logging in, submitting enrollment, checking conflicts), Nginx forwards them to Gunicorn, which is a Python application server that keeps Django running continuously. Gunicorn handles multiple requests simultaneously — if 200 students are enrolling at the same time, Gunicorn spawns multiple worker processes to handle them in parallel without any student having to wait for another to finish.
-
-### Step 4 — Django reads from or writes to PostgreSQL. 
-
-Django queries the PostgreSQL database for the data it needs — available slots, student records, schedule information — and returns the result back up the chain to the student's browser.
-
-### Step 5 — Redis handles the load. 
-
-For data that does not change frequently (subject listings, academic calendar, room assignments), Redis serves cached copies directly without hitting the database at all. This is what keeps the system fast and responsive during the high-traffic enrollment window.
-
 ### Reliability and Safety Measures:
 
 The university should operate at minimum two physical servers — one primary and one standby. If the primary server goes down for any reason (hardware failure, power issue), the standby server takes over automatically with no downtime for students. This is called a failover setup and is standard practice for any critical institutional system.
