@@ -4,7 +4,7 @@ A summary of the system.
 
 ## Tech Stack
 
-- i. Frontend - React.js 
+### Frontend - React.js 
 
 React.js is the most widely adopted frontend library in the world, maintained by Meta and used in production by companies like Facebook, Instagram, Netflix, and Airbnb. It builds the user interface which is everything the student or admin sees and interacts with.
 
@@ -16,7 +16,7 @@ Reference: https://react.dev
 
 The official documentation is maintained by Meta. Stack Overflow's 2023 Developer Survey ranked React as the most used web framework for the 11th year in a row.
 
-- ii. Backend — Django (Python)
+### Backend — Django (Python)
 
 Django is a high-level Python web framework that follows the "batteries-included" philosophy meaning it comes with authentication, an admin panel, database management, form validation, and security protections all built in. It is used in production by Instagram, Pinterest, Disqus, and Mozilla.
 
@@ -32,7 +32,7 @@ Reference: https://www.djangoproject.com https://www.django-rest-framework.org
 Django has been in active development since 2005 and is one of the most well-documented frameworks available.
 
 
-- iii. Database — PostgreSQL
+### Database — PostgreSQL
 
 PostgreSQL is the world's most advanced open-source relational database. It is free, battle-tested at massive scale, and the standard choice for any application that deals with structured, relational data. Reddit, Instagram, Twitch, and the U.S. government all run PostgreSQL in production.
 
@@ -47,9 +47,9 @@ Reference: https://www.postgresql.org
 PostgreSQL has been in continuous development since 1996 and consistently ranks as the most admired database in Stack Overflow's annual developer surveys.
 
 
-- iv. Other Tools
+### Other Tools
 
-### Redis
+##### Redis
 
 Redis is an in-memory data store used as a caching layer. During peak enrollment periods, such as the first day of pre-enrollment, the CRS database would receive possibly hundreds of requests per minute for the same data such as the list of available subjects, the academic calendar, room assignments. Without caching, every single one of those requests hits the database, which slows the entire system down.
 
@@ -59,7 +59,7 @@ Reference: https://redis.io
 
 Redis is used by Twitter, GitHub, Snapchat, and Stack Overflow.
 
-### Docker
+##### Docker
 
 Docker is a containerization tool that packages the entire application— which would be React frontend, Django backend, PostgreSQL database, and Redis— into isolated containers. Each container includes everything that the service needs to run which are the code, the runtime, the dependencies, and the configuration.
 The practical benefit is that the system runs identically on a developer's laptop, on the staging server, and on the production server. There is no risk of "it worked in testing but broke in production" because the environment is exactly the same everywhere. It also makes it easy for ICTS staff to restart, update, or roll back any individual component without touching the others.
