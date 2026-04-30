@@ -98,7 +98,7 @@ For requests that need server logic (logging in, submitting enrollment, checking
 
 Django queries the PostgreSQL database for the data it needs — available slots, student records, schedule information — and returns the result back up the chain to the student's browser.
 
-#### Step 5 — Redis handles the load. 
+### Step 5 — Redis handles the load. 
 
 For data that does not change frequently (subject listings, academic calendar, room assignments), Redis serves cached copies directly without hitting the database at all. This is what keeps the system fast and responsive during the high-traffic enrollment window.
 
