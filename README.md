@@ -4,9 +4,9 @@ The University of the Philippines Visayas Computerized Registration System (UPV 
 
 #### Team Members
 
-Blancaflor, Leona
-Dy, Nicole Ashley
-Sajorne, Chrystie Rae
+- Blancaflor, Leona
+- Dy, Nicole Ashley
+- Sajorne, Chrystie Rae
 
 ## Tech Stack
 
