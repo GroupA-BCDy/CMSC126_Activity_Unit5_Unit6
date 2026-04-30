@@ -114,3 +114,8 @@ HTTPS is enforced at the Nginx level using a certificate tied to the upv.edu.ph 
 ## Mockups
 
 ![image alt](https://github.com/GroupA-BCDy/CMSC126_Activity_Unit5_Unit6/blob/6666fa34d880d0f3cd5facd12e7ce10223671cc2/mockup1.png)
+![image alt](https://github.com/GroupA-BCDy/CMSC126_Activity_Unit5_Unit6/blob/7647395cd6ce0d5640ddff708481d62b9de28e36/mockup2.png)
+![image alt](https://github.com/GroupA-BCDy/CMSC126_Activity_Unit5_Unit6/blob/7647395cd6ce0d5640ddff708481d62b9de28e36/mockup3.png)
+![image alt](https://github.com/GroupA-BCDy/CMSC126_Activity_Unit5_Unit6/blob/7647395cd6ce0d5640ddff708481d62b9de28e36/mockup4.png)
+![image alt](https://github.com/GroupA-BCDy/CMSC126_Activity_Unit5_Unit6/blob/7647395cd6ce0d5640ddff708481d62b9de28e36/mockup5.png)
+![image alt](https://github.com/GroupA-BCDy/CMSC126_Activity_Unit5_Unit6/blob/7647395cd6ce0d5640ddff708481d62b9de28e36/mockup6.png)
