@@ -18,7 +18,7 @@ For CRS 2.0, React handles the dynamic parts of the system: the enrollment form 
 
 React is also component-based, meaning we build reusable pieces and reuse them across every screen. This keeps the codebase clean and easy to maintain long-term, even when developers rotate.
 
-Reference: https://react.dev 
+#### Reference: https://react.dev 
 
 The official documentation is maintained by Meta. Stack Overflow's 2023 Developer Survey ranked React as the most used web framework for the 11th year in a row.
 
@@ -33,7 +33,7 @@ Django REST Framework (DRF) is installed on top of Django to expose clean API en
 
 Security-wise, Django has built-in protection against the most common web vulnerabilities like SQL injection, cross-site scripting (XSS), cross-site request forgery (CSRF), and clickjacking. For a university system that handles sensitive student records, this is a hard requirement.
 
-Reference: https://www.djangoproject.com https://www.django-rest-framework.org 
+#### Reference: https://www.djangoproject.com https://www.django-rest-framework.org 
 
 Django has been in active development since 2005 and is one of the most well-documented frameworks available.
 
@@ -48,7 +48,7 @@ The most critical feature PostgreSQL provides for CRS specifically is transactio
 
 PostgreSQL integrates directly with Django through a single configuration line meaning no extra setup required.
 
-Reference: https://www.postgresql.org 
+#### Reference: https://www.postgresql.org 
 
 PostgreSQL has been in continuous development since 1996 and consistently ranks as the most admired database in Stack Overflow's annual developer surveys.
 
@@ -61,7 +61,7 @@ Redis is an in-memory data store used as a caching layer. During peak enrollment
 
 Redis solves this by storing that frequently-read data in memory. The first request fetches it from the database and stores a copy in Redis. Every subsequent request reads from Redis instead which is up to 100x faster than a database query. Redis is also used to store user session data, so students stay logged in across page refreshes.
 
-Reference: https://redis.io 
+#### Reference: https://redis.io 
 
 Redis is used by Twitter, GitHub, Snapchat, and Stack Overflow.
 
@@ -70,7 +70,7 @@ Redis is used by Twitter, GitHub, Snapchat, and Stack Overflow.
 Docker is a containerization tool that packages the entire application— which would be React frontend, Django backend, PostgreSQL database, and Redis— into isolated containers. Each container includes everything that the service needs to run which are the code, the runtime, the dependencies, and the configuration.
 The practical benefit is that the system runs identically on a developer's laptop, on the staging server, and on the production server. There is no risk of "it worked in testing but broke in production" because the environment is exactly the same everywhere. It also makes it easy for ICTS staff to restart, update, or roll back any individual component without touching the others.
 
-Reference: https://www.docker.com 
+#### Reference: https://www.docker.com 
 
 Docker is the industry standard for application deployment, used by virtually every major tech company.
 
@@ -110,7 +110,6 @@ Automated database backups run every night using PostgreSQL's built-in pg_dump t
 All services run inside Docker containers managed by Docker Compose. This means the entire system — Nginx, Django, PostgreSQL, Redis — can be started, stopped, updated, or restarted with a single command. If a security patch needs to be applied or a bug needs to be fixed, ICTS staff can redeploy the updated container in minutes without taking the whole system offline.
 
 HTTPS is enforced at the Nginx level using a certificate tied to the upv.edu.ph domain. All HTTP traffic is automatically redirected to HTTPS, so there is no scenario where a student's login credentials or enrollment data travels unencrypted over the network.
-
 
 ## Mockups
 
