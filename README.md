@@ -9,6 +9,8 @@ A summary of the system.
 - [Database](#database)
 - [Other Tools](#othertools)
 
+### Frontend
+
 ## Hosting
 
 CRS 2.0 will be hosted on physical servers owned by the university and managed by ICTS, rather than renting cloud space from a third party. This means student data such as grades, enrollment records, and personal information never leave the university's physical premises and remain fully under UPV's control, in compliance with the Data Privacy Act of 2012 (RA 10173).
