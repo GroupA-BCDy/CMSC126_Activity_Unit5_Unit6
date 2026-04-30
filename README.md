@@ -1,6 +1,6 @@
 # UPV CRS 2.0
 
-The University of the Philippines Visayas Computerized Registration System 2.0 (UPV CRS 2.0) is an improved version of the university’s course registration platform designed to enhance usability, efficiency, and accessibility through a more user-friendly interface and a compact, readable layout. The system streamlines navigation and interaction, reduces visual clutter, and optimizes performance to ensure faster, smoother use. It is also built with scalability in mind, allowing for future enhancements while maintaining a reliable and intuitive user experience aligned with modern web standards.
+University of the Philippines Visayas Computerized Registration System 2.0 (UPV CRS 2.0) is an improved version of the university’s course registration platform designed to enhance usability, efficiency, and accessibility through a more user-friendly interface and a compact, readable layout. The system streamlines navigation and interaction, reduces visual clutter, and optimizes performance to ensure faster, smoother use. It is also built with scalability in mind, allowing for future enhancements while maintaining a reliable and intuitive user experience aligned with modern web standards.
 
 ### Team Members
 
