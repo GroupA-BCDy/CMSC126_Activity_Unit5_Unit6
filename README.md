@@ -2,7 +2,7 @@
 
 The University of the Philippines Visayas Computerized Registration System 2.0 (UPV CRS 2.0) is an improved version of the university’s course registration platform designed to enhance usability, efficiency, and accessibility through a more user-friendly interface and a compact, readable layout. The system streamlines navigation and interaction, reduces visual clutter, and optimizes performance to ensure faster, smoother use. It is also built with scalability in mind, allowing for future enhancements while maintaining a reliable and intuitive user experience aligned with modern web standards.
 
-#### Team Members
+### Team Members
 
 - Blancaflor, Leona
 - Dy, Nicole Ashley
@@ -10,7 +10,7 @@ The University of the Philippines Visayas Computerized Registration System 2.0 (
 
 ## Tech Stack
 
-#### i. Frontend — React.js
+### i. Frontend — React.js
 
 React.js is the most widely adopted frontend library in the world, maintained by Meta and used in production by companies like Facebook, Instagram, Netflix, and Airbnb. It builds the user interface which is everything the student or admin sees and interacts with.
 
@@ -22,7 +22,7 @@ React is also component-based, meaning we build reusable pieces and reuse them a
 
 The official documentation is maintained by Meta. Stack Overflow's 2023 Developer Survey ranked React as the most used web framework for the 11th year in a row.
 
-#### ii. Backend — Django (Python)
+### ii. Backend — Django (Python)
 
 Django is a high-level Python web framework that follows the "batteries-included" philosophy meaning it comes with authentication, an admin panel, database management, form validation, and security protections all built in. It is used in production by Instagram, Pinterest, Disqus, and Mozilla.
 
@@ -38,7 +38,7 @@ Security-wise, Django has built-in protection against the most common web vulner
 Django has been in active development since 2005 and is one of the most well-documented frameworks available.
 
 
-#### iii. Database — PostgreSQL
+### iii. Database — PostgreSQL
 
 PostgreSQL is the world's most advanced open-source relational database. It is free, battle-tested at massive scale, and the standard choice for any application that deals with structured, relational data. Reddit, Instagram, Twitch, and the U.S. government all run PostgreSQL in production.
 
@@ -53,7 +53,7 @@ PostgreSQL integrates directly with Django through a single configuration line m
 PostgreSQL has been in continuous development since 1996 and consistently ranks as the most admired database in Stack Overflow's annual developer surveys.
 
 
-#### iv. Other Tools
+### iv. Other Tools
 
 #### Redis
 
@@ -82,19 +82,19 @@ When a student opens their browser and goes to crs.upv.edu.ph, the request trave
 
 To keep the system fast during peak enrollment, Redis is used as a caching layer. Data that doesn't change often, like the list of subject offerings or the academic calendar, is stored in Redis so that Django doesn't have to query the database every single time a student loads that information. This alone significantly reduces the load on the system during the high-traffic enrollment window.
 
-#### Step 1 — The student opens the browser. 
+### Step 1 — The student opens the browser. 
 
 The student types crs.upv.edu.ph into their browser. The request travels through UPV's network to the university's server room.
 
-#### Step 2 — Nginx receives the request. 
+### Step 2 — Nginx receives the request. 
 
 Nginx is a web server that acts as the front door of the entire system. It is the first thing that receives every incoming request. Nginx is responsible for two things: serving the React frontend files (HTML, JavaScript, CSS) directly to the browser, and forwarding API requests (like "fetch available subjects") to Django. Nginx also handles HTTPS. It holds the SSL certificate issued under UPV's domain, so all traffic between the student's browser and the server is encrypted. No one can intercept or read the data in transit.
 
-#### Step 3 — Django processes the request. 
+### Step 3 — Django processes the request. 
 
 For requests that need server logic (logging in, submitting enrollment, checking conflicts), Nginx forwards them to Gunicorn, which is a Python application server that keeps Django running continuously. Gunicorn handles multiple requests simultaneously — if 200 students are enrolling at the same time, Gunicorn spawns multiple worker processes to handle them in parallel without any student having to wait for another to finish.
 
-#### Step 4 — Django reads from or writes to PostgreSQL. 
+### Step 4 — Django reads from or writes to PostgreSQL. 
 
 Django queries the PostgreSQL database for the data it needs — available slots, student records, schedule information — and returns the result back up the chain to the student's browser.
 
@@ -102,7 +102,7 @@ Django queries the PostgreSQL database for the data it needs — available slots
 
 For data that does not change frequently (subject listings, academic calendar, room assignments), Redis serves cached copies directly without hitting the database at all. This is what keeps the system fast and responsive during the high-traffic enrollment window.
 
-#### Reliability and Safety Measures:
+### Reliability and Safety Measures:
 
 The university should operate at minimum two physical servers — one primary and one standby. If the primary server goes down for any reason (hardware failure, power issue), the standby server takes over automatically with no downtime for students. This is called a failover setup and is standard practice for any critical institutional system.
 Automated database backups run every night using PostgreSQL's built-in pg_dump tool. These backups are stored on a separate physical drive and optionally copied to an offsite location, so even in a worst-case scenario like a fire or hardware failure, no student data is permanently lost.
